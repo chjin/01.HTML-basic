@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2.동영상_폼_레이아웃 구성태그</title>
+    <!--
+    *HTML
+        : HyperText MarkUp Language
+          HyperText 기능을 가진 문서를 만드는 언어.
+          웹문서의 표준 포맷,
+          오로지 화면에 어떻게 보이게 할 것인가에 중점.
+    *HTML 구성요소(4개)
+        :1)요소(Element)
+            -시작태그 + 내용 + 종료태그
+         2)태그(tag)
+            -요소의 하나로서 시작태그,종료태그로 나뉨.
+             <>사이에 오는 지정된 문자(태그 이름)
+         3)속성(attributes)
+            -조금 더 구체화된 명령어로서,
+             요소의 시작태그 안에서 사용.
+         4)변수(Arguments)
+            -속성과 관련된 값을 의미함.
+     *XHTML
+         :eXtendible HyperText MartUp Languag
+         확장 가능한 형태의 HTML.
+         -HTML 문법을 대부분 그대로 계승하고,
+          이 문법을 좀더 엄격하게 지키도록 요구함.
+         -HTML을 대체하기 위한 목적으로 만들어진 언어.
+
+         -XML:정보를 확장하고 정의하는 문서.
+         -HTML: 이미 정의된 기본적인 문서형식.
+         -XHTML: 기본적인 형식을 가지고 있지만,
+                 확장 가능한 문서. HTML에 비해
+                 좀더 명확하고 구조적인 특징 가짐.
+             -주요특징:
+                 1)반드시 종료태그를 사용해야 함.
+                    -EMPTY 선언된 태그(hr,img,input...)를 제외.
+                 2)대소문자 구분-모든 요소와 속성은 소문자여야 함.
+                 3)속성값 따옴표("")를 반드시 사용함.
+                 4)모든 script,style 요소에는 Type 속성이 포함되어야 함.
+                 <style type="text/css"></style>
+                 <script type="text/javascript"></script>
+                 5)html 요소는 XHTML 네임스페이스를 지정해야 함.
+                 <html xmlns="http://www.w3.org/1999/xhtml">
+                 6)모든 img, area 요소에는 alt 속성이 포함되어야 함.
+          *HTML5
+              : 웹 표준 기구인 W3C에서 만들고 있는 차세대 웹 표준안.
+                웹 브라우저 호환성, 구조적이고 의미있는 MarkUp 및 편리한 웹 폼 기능 제공.
+
+    -->
+</head>
+<body>
+    <video src="AppleiPadProTrailer2.mp4" type="video/mp4" controls="controls"></video>
+    <video controls="controls">
+        <source src="AppleiPadProTrailer2.mp4" type="video/mp4"/>
+    </video>
+    <br/><br/><br/>
+    <!--
+    <form> 태그
+        : 입력 양식을 정의하는 태그.
+        속성                  의미
+        action              데이터가 전송될 장소.
+        method              폼을 전송하는 방식(get,post)
+        name                폼 이름.
+    <input> 태그
+        : 사용자로부터 데이터를 입력 받기 위한 태그.
+        속성                      의미
+        type="text"             문자입력 받을 때 사용.
+             "password"         암호 입력받을 때 사용.
+             "checkbox"         체크박스로 여러 개 복수 선택할때.
+             "radio"            라디오 박스로 여러 개 값 중 하나 선택할때.
+             "submit"           폼 내용 전송 할때.
+             "reset"            폼 입력 값 초기 값으로 할때.
+             "file"             첨부파일처럼 파일을 전송 할때.
+             "hidden"           사용자에게 보이지 않게 전달할 값 있을 때.
+             "image"            그래픽 submit 단추
+             "button"           버튼으로 입력 단추 만들때.
+         name                   제어 이름.
+         size                   크기 알려줌.(text,password==>글자수)
+
+     <textarea> 태그
+         : 두 줄 이상의 텍스트 입력란 만들때.
+         속성                     의미
+         rows                   행의 수 지정
+         cols                   열의 수 지정
+     <select> 태그
+         : 리스트 박스, 콤보 박스 만들때 사용.
+         multiple               Ctrl or Shift키 누른채 두개 이상 메뉴
+                                동시 선택 가능.
+    -->
+
+    <form action="#" method="get">
+        이름 : <input type="text" name="uname"/><br/>
+        아이디 : <input type="text" name="uid"/><br/>
+        비밀번호 : <input type="password" name="upw"/><br/>
+        연락처 : <input type="text" name="uphone1" size="5"/> -
+                <input type="text" name="uphone2" size="5"/> -
+                <input type="text" name="uphone3" size="5"/><br/>
+        사진 : <input type="file" name="upic"/><br/>
+        성별 : <input type="radio" name="gender" value="m"/>남,
+            <input type="radio" name="gender" value="w"/>여<br/>
+        사용언어 : <input type="checkbox" name="lan" value="kor" checked="checked"/>한글,
+                <input type="checkbox" name="lan" value="eng" />영어,
+                <input type="checkbox" name="lan" value="jpa" />일어,
+                <input type="checkbox" name="lan" value="chi" />중국어<br/>
+        자기소개 : <textarea rows="5" cols="20">간단하게 입력하세요.</textarea><br/>
+        국적 : <select>
+                <option>KOREA</option>
+                <option>CHINA</option>
+                <option>JAPAN</option>
+                <option>USA</option>
+              </select><br/>
+        좋아하는 음식 : <select multiple="multiple">
+                        <option>불고기</option>
+                        <option>파전</option>
+                        <option>김치</option>
+                        <option>떡국</option>
+                      </select><br/>
+        <input type="submit"/>
+    </form>
+
+    <!--
+    레이아웃 구성 태그
+        div : 블럭 단위
+    -->
+    <!--
+    HTML5 시멘틱 태그
+        시멘틱 태그: 태그 이름만 보고도 역할을 짐작할 수 있는 태그.
+            <header>,<nav>,<section>,<article>,<aside>,<footer>
+    -->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
